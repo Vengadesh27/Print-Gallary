@@ -1,6 +1,7 @@
 <template>
       <FluidCursor />
 
+      <ErrorModal />
   <router-view /> 
 </template>
 

@@ -1,4 +1,9 @@
 <template>
+
+
+<Login @close="showLoginDialog = false" v-if="showLoginDialog" />
+
+
   <div
     class="fixed inset-0 w-full h-screen bg-black overflow-hidden selection:bg-purple-500/30 text-white"
   >
@@ -25,7 +30,7 @@
       </div>
 
       <div class="flex items-center gap-4 pointer-events-auto">
-        <button class="text-sm font-medium hover:text-purple-400 transition-colors">Login</button>
+        <button class="text-sm font-medium hover:text-purple-400 transition-colors" @click="showLoginDialog = true">Login</button>
         <RainbowButton class="scale-90 origin-right">Donate</RainbowButton>
       </div>
     </nav>
@@ -62,6 +67,17 @@ import { FluidCursor } from '@/components/ui/fluid-cursor'
 import { StarsBackground } from '@/components/ui/bg-stars'
 import RainbowButton from '@/components/ui/rainbow-button/RainbowButton.vue'
 import SparklesText from '@/components/ui/sparkles-text/SparklesText.vue'
+
+import Login from '@/views/Login.vue'
+
+import { ref } from 'vue'
+
+const showLoginDialog = ref(false)
+
+
+
+
+
 </script>
 
 <style scoped>
